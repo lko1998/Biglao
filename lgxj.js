@@ -18,8 +18,5 @@ hostname = *.imendon.com
 
 *************************************/
 
-var chxm1023 = $response.body;
 
-chxm1023 = body.replace(/\"isValid":\d+/g, '\"isValid":1');
-
-$done({chxm1023});
+var chxm1023 = JSON.parse($response.body);chxm1023.data.isValid = 1;$done({body : JSON.stringify(chxm1023)});
