@@ -18,20 +18,6 @@ hostname = ggs.manmeng168.com
 *************************************/
 
 
-const vipa = "/ios/user/info";
-const vipb = "/user/info";
-var chxm1023 = JSON.parse($response.body);
+body = $response.body.replace(/\"vip":\w+/g, '\"vip":true').replace(/\"vip_end_time":\d+/g, '\"vip_end_time":4092599349000');
 
-if ($request.url.indexOf(vipa) != -1) {
-	chxm1023.data.userInfo.vip = true;
-	chxm1023.data.userInfo.sm_enable = true;
-	chxm1023.data.userInfo.vip_end_time = 4092599349000;
-}
-
-if ($request.url.indexOf(vipb) != -1) {
-	chxm1023.data.vip = true;
-	chxm1023.data.sm_enable = true;
-	chxm1023.data.vip_end_time = 4092599349000;
-}
-
-$done({ body: JSON.stringify(chxm1023) });
+$done({body});
