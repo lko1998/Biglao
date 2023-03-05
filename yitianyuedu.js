@@ -20,8 +20,7 @@ hostname = novel.test.onedayapp.cn
 
 var chxm1023 = JSON.parse($response.body);
 
-chxm1023.data.vip = 1;
+chxm1023.data.vip = 3;
 chxm1023.data.sex =1;
-chxm1023.data.vipEndTime = 4092599350000;
 
 $done({body : JSON.stringify(chxm1023)});
